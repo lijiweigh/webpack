@@ -9,7 +9,8 @@ module.exports = {
     },
     output: {
         filename: "[name].[hash].js",
-        path: path.join(__dirname, "dist")
+        path: path.join(__dirname, "dist"),
+        chunkFilename: "[name].bundle.js"
     },
     module: {
         rules: [
@@ -28,5 +29,10 @@ module.exports = {
         new htmlWebpackPlugin({
             template: path.join(__dirname, "template/index.html")
         })
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: "all"
+        }
+    }
 }
