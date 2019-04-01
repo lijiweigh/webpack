@@ -1,6 +1,7 @@
 const path = require("path")
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const cleanWebpackPlugin = require("clean-webpack-plugin")
+const webpack = require("webpack")
 
 module.exports = {
     mode: "development",
@@ -15,8 +16,9 @@ module.exports = {
     devtool: "inline-source-map",
     devServer: {
         contentBase: "./dist",
-        open: true,
-        host: "192.168.42.87"
+        // open: true,
+        host: "192.168.42.87",
+        // hot: true
     },
     module: {
         rules: [
@@ -40,6 +42,7 @@ module.exports = {
             template: "./template/index.html",
             title: "webpack-test"
         }),
-        new cleanWebpackPlugin()
+        new cleanWebpackPlugin(),
+        // new webpack.HotModuleReplacementPlugin()
     ]
 }
