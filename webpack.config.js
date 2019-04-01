@@ -1,13 +1,22 @@
 const path = require("path")
+const htmlWebpackPlugin = require('html-webpack-plugin')
+const cleanWebpackPlugin = require("clean-webpack-plugin")
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: {
-        main: './src/index.js'
+        main: './src/index.js',
+        print: "./src/print.js"
     },
     output: {
-        filename: '[name].js',
+        filename: '[name].[hash].js',
         path: __dirname + '/dist'
+    },
+    devtool: "inline-source-map",
+    devServer: {
+        contentBase: "./dist",
+        open: true,
+        host: "192.168.42.87"
     },
     module: {
         rules: [
@@ -25,5 +34,12 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            template: "./template/index.html",
+            title: "webpack-test"
+        }),
+        new cleanWebpackPlugin()
+    ]
 }

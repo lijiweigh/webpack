@@ -1,5 +1,6 @@
 import "./style.css"
 import img from "./1.jpg"
+import printMe from "./print"
 
 function Component () {
     let ele = document.createElement("div")
@@ -16,3 +17,5 @@ function Component () {
 
 document.body.appendChild(Component ())
 console.log("hello")
+
+printMe()
