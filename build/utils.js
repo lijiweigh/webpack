@@ -25,7 +25,8 @@ function htmlPlugin () {
             template: filepath,
             filename: name + ".html",
             chunks: ["vendors", name],
-            inject: true
+            inject: true,
+            // multihtmlCache: true
         }
         if (process.env.NODE_ENV === "production") {
             conf = merge(conf, {
