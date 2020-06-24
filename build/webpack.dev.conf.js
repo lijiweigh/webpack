@@ -6,7 +6,8 @@ const utils = require("./utils")
 
 module.exports = merge(base, {
     mode: "development",
-    devtool: "inline-source-map",
+    // devtool: "inline-source-map",
+    // devtool: "",
     devServer: {
         contentBase: path.resolve(__dirname, "../dist"),
         clientLogLevel: "none",  // 隐藏每次更新时浏览器的log信息
