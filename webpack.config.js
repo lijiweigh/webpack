@@ -12,10 +12,11 @@ const config = {
     mode: "none",
     entry: {
         app: "./src/index.js",
-        // print: "./src/print.js"
+        print: "./src/print.js",
+        another: "./src/another.js"
     },
     output: {
-        filename: "[name].bundle.js",
+        filename: "[name].[contentHash].js",
         path: path.resolve(__dirname, "dist")
     },
     // devtool: "eval",
