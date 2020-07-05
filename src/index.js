@@ -1,6 +1,19 @@
 // import _ from 'lodash';
 // import printMe from './print.js';
 // import "./style.css"
+import Vue from "vue"
+import VueRouter from "vue-router"
+// import moment from "moment"
+
+// console.log(moment())
+import("moment").then(moment => {
+    console.log(moment())
+})
+
+new Vue({
+    el: "#app",
+    router: new VueRouter()
+})
 import {cube} from "./math"
 
   function component() {

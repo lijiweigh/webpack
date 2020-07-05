@@ -2,6 +2,7 @@ const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const {CleanWebpackPlugin} = require("clean-webpack-plugin")
 const webpack = require("webpack")
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 // import {Configuration} from "webpack"
 
@@ -9,7 +10,7 @@ const webpack = require("webpack")
  * @type {Configuration}
  */
 const config = {
-    mode: "none",
+    mode: "production",
     entry: {
         app: "./src/index.js",
         print: "./src/print.js",
@@ -39,11 +40,31 @@ const config = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: "HtmlWebpackPlugin",
-            // template: "./dist/index.html"
+            template: "./src/index.html"
         }),
+    //    new BundleAnalyzerPlugin(),
+       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
         // new webpack.NamedModulesPlugin(),
         // new webpack.HotModuleReplacementPlugin()
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            name: false,
+            cacheGroups: {
+                vue: {
+                    chunks: "all",
+                    name: "vue",
+                    priority: 10,
+                    test: (module) => {
+                        console.log(module.context)
+                        return /vue|vue-router/.test(module.context)
+                    }
+                }
+            }
+        },
+        
+    }
 }
 
 module.exports = config
