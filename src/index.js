@@ -3,9 +3,9 @@
 // import "./style.css"
 import Vue from "vue"
 import VueRouter from "vue-router"
-import print from "./1"
+// import print from "./1"
 
-print("text")
+// print("text")
 // import moment from "moment"
 
 // console.log(moment())

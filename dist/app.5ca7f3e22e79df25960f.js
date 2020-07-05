@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{tjUo:function(e,n,o){"use strict";o.r(n);var t,d,l=o("Kw5r"),p=o("jE9Z");o.e(1).then(o.t.bind(null,"wd/R",7)).then(e=>{console.log(e())}),new l.a({el:"#app",router:new p.a}),document.body.appendChild(((d=document.createElement("pre")).innerHTML=["hello","5 cubed equals"+(t=5,t*t*t)].join("\n\n"),d))}},[["tjUo",0,5,1]]]);
