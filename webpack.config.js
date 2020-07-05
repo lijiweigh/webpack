@@ -17,7 +17,7 @@ const config = {
         another: "./src/another.js"
     },
     output: {
-        filename: "[name].[chunkhash].js",
+        filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist")
     },
     // devtool: "eval",
@@ -42,7 +42,7 @@ const config = {
             title: "HtmlWebpackPlugin",
             template: "./src/index.html"
         }),
-    //    new BundleAnalyzerPlugin(),
+       new BundleAnalyzerPlugin(),
        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
         // new webpack.NamedModulesPlugin(),
         // new webpack.HotModuleReplacementPlugin()
@@ -57,13 +57,17 @@ const config = {
                     name: "vue",
                     priority: 10,
                     test: (module) => {
-                        console.log(module.context)
                         return /vue|vue-router/.test(module.context)
                     }
+                },
+                vendor: {
+                    chunks: "all",
+                    name: "vender",
+                    test: /[\\/]node_modules[\\/]/
                 }
             }
         },
-        
+        runtimeChunk: "single"
     }
 }
 
