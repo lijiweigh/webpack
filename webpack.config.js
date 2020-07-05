@@ -67,7 +67,8 @@ const config = {
                 }
             }
         },
-        runtimeChunk: "single"
+        runtimeChunk: "single",
+        moduleIds: "hashed"
     }
 }
 

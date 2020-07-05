@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{"Tfg+":function(o,n,e){"use strict";e.r(n);var s=e("LvDl"),w=e.n(s);console.log(w.a.join(["Another","module","loaded!"]," "))}},[["Tfg+",0,1]]]);

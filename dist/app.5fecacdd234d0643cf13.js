@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{10:function(e,n,o){"use strict";o.r(n);var t,l,p=o(2),a=o(3);o.e(1).then(o.t.bind(null,11,7)).then(e=>{console.log(e())}),new p.a({el:"#app",router:new a.a}),document.body.appendChild(((l=document.createElement("pre")).innerHTML=["hello","5 cubed equals"+(t=5,t*t*t)].join("\n\n"),l))}},[[10,0,5,1]]]);
