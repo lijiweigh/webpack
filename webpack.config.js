@@ -17,7 +17,7 @@ const config = {
         another: "./src/another.js"
     },
     output: {
-        filename: "[name].[hash].js",
+        filename: "[name].[chunkhash].js",
         path: path.resolve(__dirname, "dist")
     },
     // devtool: "eval",
