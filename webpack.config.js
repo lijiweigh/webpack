@@ -5,7 +5,6 @@ const webpack = require("webpack")
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 // import {Configuration} from "webpack"
-
 /**
  * @type {Configuration}
  */
