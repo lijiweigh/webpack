@@ -9,14 +9,15 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
  * @type {Configuration}
  */
 const config = {
-    mode: "production",
+    mode: "none",
     entry: {
         app: "./src/index.js",
-        print: "./src/print.js",
-        another: "./src/another.js"
+        // print: "./src/print.js",
+        // another: "./src/another.js"
     },
     output: {
         filename: "[name].[contenthash].js",
+        chunkFilename: "[name].chunkfile.js",
         path: path.resolve(__dirname, "dist")
     },
     // devtool: "eval",
@@ -42,33 +43,33 @@ const config = {
             template: "./src/index.html"
         }),
        new BundleAnalyzerPlugin(),
-       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    //    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
         // new webpack.NamedModulesPlugin(),
         // new webpack.HotModuleReplacementPlugin()
     ],
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-            name: false,
-            cacheGroups: {
-                vue: {
-                    chunks: "all",
-                    name: "vue",
-                    priority: 10,
-                    test: (module) => {
-                        return /vue|vue-router/.test(module.context)
-                    }
-                },
-                vendor: {
-                    chunks: "all",
-                    name: "vender",
-                    test: /[\\/]node_modules[\\/]/
-                }
-            }
-        },
-        runtimeChunk: "single",
-        moduleIds: "hashed"
-    }
+    // optimization: {
+    //     splitChunks: {
+    //         chunks: 'all',
+    //         name: false,
+    //         cacheGroups: {
+    //             vue: {
+    //                 chunks: "all",
+    //                 name: "vue",
+    //                 priority: 10,
+    //                 test: (module) => {
+    //                     return /vue|vue-router/.test(module.context)
+    //                 }
+    //             },
+    //             vendor: {
+    //                 chunks: "all",
+    //                 name: "vender",
+    //                 test: /[\\/]node_modules[\\/]/
+    //             }
+    //         }
+    //     },
+    //     runtimeChunk: "single",
+    //     moduleIds: "hashed"
+    // }
 }
 
 module.exports = config
