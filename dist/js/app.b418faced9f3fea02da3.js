@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"1":"vendors~moment","2":"vendors~another","3":"moment","4":"print","5":"another"}[chunkId]||chunkId) + ".chunkfile.js"
+/******/ 		return __webpack_require__.p + "" + ({"2":"vendors~moment","3":"vendors~another","4":"moment","5":"another"}[chunkId]||chunkId) + ".chunkfile.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -219,15 +219,15 @@ __webpack_require__.r(__webpack_exports__);
 // import moment from "moment"
 
 // console.log(moment())
-Promise.all(/* import() | moment */[__webpack_require__.e(1), __webpack_require__.e(3)]).then(__webpack_require__.t.bind(null, 8, 7)).then(moment => {
+Promise.all(/* import() | moment */[__webpack_require__.e(2), __webpack_require__.e(4)]).then(__webpack_require__.t.bind(null, 9, 7)).then(moment => {
     console.log("moment"())
 })
 
-__webpack_require__.e(/* import() | print */ 4).then(__webpack_require__.bind(null, 144)).then(() => {
-    console.log("print")
-})
+// import(/* webpackChunkName: "print" */"./print").then(() => {
+//     console.log("print")
+// })
 
-Promise.all(/* import() | another */[__webpack_require__.e(2), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, 145)).then(() => {
+Promise.all(/* import() | another */[__webpack_require__.e(3), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, 145)).then(() => {
     console.log("another")
 })
 

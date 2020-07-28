@@ -13,9 +13,9 @@ import(/* webpackChunkName: "moment" */"moment").then(moment => {
     console.log("moment"())
 })
 
-import(/* webpackChunkName: "print" */"./print").then(() => {
-    console.log("print")
-})
+// import(/* webpackChunkName: "print" */"./print").then(() => {
+//     console.log("print")
+// })
 
 import(/* webpackChunkName: "another" */"./another").then(() => {
     console.log("another")

@@ -12,11 +12,11 @@ const config = {
     mode: "none",
     entry: {
         app: "./src/index.js",
-        // print: "./src/print.js",
+        print: "./src/print.js",
         // another: "./src/another.js"
     },
     output: {
-        filename: "[name].[contenthash].js",
+        filename: "js/[name].[contenthash].js",
         chunkFilename: "[name].chunkfile.js",
         path: path.resolve(__dirname, "dist")
     },
@@ -42,7 +42,7 @@ const config = {
             title: "HtmlWebpackPlugin",
             template: "./src/index.html"
         }),
-       new BundleAnalyzerPlugin(),
+    //    new BundleAnalyzerPlugin(),
     //    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
         // new webpack.NamedModulesPlugin(),
         // new webpack.HotModuleReplacementPlugin()
